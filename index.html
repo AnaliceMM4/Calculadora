@@ -12,9 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="calculator.css">
-    <title>CALCULADORA</title>
+    <title>Calculadora da Aninha</title>
 </head>
-    <body>
+
+<body>
+
+    <main>
+        <div>
+            <h1 class="welcome">Calculadora da Aninha</h1>
+        </div>
+
         <div class="calculator">
             <div class="circle"></div>
             <div class="circle"></div>
@@ -22,16 +29,16 @@
             <table>
                 <tr>
                     <td>
-                        <button style="color: #ff0000;" onclick="clr()">C</button>
+                        <button style="color: #c70000;" onclick="clr()">C</button>
                     </td>
                     <td>
-                        <button style="color: deepskyblue;" onclick="dis('/')">/</button>
+                        <button style="color: #d1c58f;" onclick="dis('/')">/</button>
                     </td>
                     <td>
-                        <button style="color: deepskyblue;" onclick="dis('%')">%</button>
+                        <button style="color: rgb(209, 197, 143);" onclick="dis('%')">%</button>
                     </td>
                     <td>
-                        <button style="color: deepskyblue;" onclick="backspace()">
+                        <button style="color: rgb(209, 197, 143);" onclick="backspace()">
                             <i class="fas fa-backspace"></i>
                         </button>
                     </td>
@@ -47,7 +54,7 @@
                         <button onclick="dis('9')">9</button>
                     </td>
                     <td>
-                        <button style="color: #108568;" onclick="dis('*')">x</button>
+                        <button style="color: #d1c58f;" onclick="dis('*')">x</button>
                     </td>
                 </tr>
                 <tr>
@@ -61,7 +68,7 @@
                         <button onclick="dis('6')">6</button>
                     </td>
                     <td>
-                        <button style="color:#108568;" onclick="dis('-')">-</button>
+                        <button style="color:#d1c58f; font-size: 2.5rem;" onclick="dis('-')">-</button>
                     </td>
                 </tr>
                 <tr>
@@ -75,7 +82,8 @@
                         <button onclick="dis('3')">3</button>
                     </td>
                     <td>
-                        <button style="color: #108568;" onclick="dis('+')">+</button>
+                        <!-- #f1c83e -->
+                        <button style="color: #beb176;" onclick="dis('+')">+</button>
                     </td>
                 </tr>
                 <tr>
@@ -90,31 +98,33 @@
                     </td>
                 </tr>
             </table>
+            <!-- </div> -->
         </div>
-        <script>
-            //Function To Display Values On screen
-            function dis(value) {
-                document.getElementById("screen").value += value;
-            }
+    </main>
+    <script>
+        //Function To Display Values On screen
+        function dis(value) {
+            document.getElementById("screen").value += value;
+        }
 
-            // Function For Evaluation
-            function solve() {
-                let x = document.getElementById("screen").value;
-                let y = eval(x);
-                document.getElementById("screen").value = y;
-            }
+        // Function For Evaluation
+        function solve() {
+            let x = document.getElementById("screen").value;
+            let y = eval(x);
+            document.getElementById("screen").value = y;
+        }
 
-            //Function For clearing the screen
-            function clr() {
-                document.getElementById("screen").value = ""
-            }
+        //Function For clearing the screen
+        function clr() {
+            document.getElementById("screen").value = ""
+        }
 
-            //backspacing
-            function backspace() {
-                let screen = document.getElementById("screen").value;
-                document.getElementById("screen").value = screen.substring(0, screen.length - 1);
-            }
-        </script>
-    </body>
+        //backspacing
+        function backspace() {
+            let screen = document.getElementById("screen").value;
+            document.getElementById("screen").value = screen.substring(0, screen.length - 1);
+        }
+    </script>
+</body>
 
-    </html>
+</html>
